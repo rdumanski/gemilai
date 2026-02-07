@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemilai - Profesjonalne Ekspresy do Kawy i Młynki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: #ffffff;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            color: white;
+            padding: 40px 20px 60px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo-container {
+            max-width: 300px;
+            margin: 0 auto 20px;
+            background: white;
+            padding: 20px 40px;
+            border-radius: 8px;
+        }
+        
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .tagline {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 30px auto 0;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+        
+        .hero-feature::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: #D2691E;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #D2691E, #CD853F);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .product-card.featured {
+            grid-column: 1 / -1;
+        }
+        
+        .product-image {
+            background: #ffffff;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #D2691E;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .product-info {
+            padding: 30px;
+        }
+        
+        .product-name {
+            font-size: 1.7em;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        
+        .spec-item {
+            background: #fafafa;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .spec-label {
+            color: #888;
+            font-size: 0.85em;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .spec-value {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-size: 2.2em;
+            color: #D2691E;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .price-label {
+            font-size: 0.5em;
+            color: #666;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #D2691E;
+            color: white;
+            padding: 14px 36px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        
+        .cta-button:hover {
+            background: #A0522D;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.3);
+        }
+        
+        /* Comparison Table */
+        .comparison {
+            padding: 60px 20px;
+            background: #fafafa;
+        }
+        
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            background: white;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            min-width: 650px;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+            letter-spacing: 0.3px;
+        }
+        
+        th:first-child {
+            border-radius: 12px 0 0 0;
+        }
+        
+        th:last-child {
+            border-radius: 0 12px 0 0;
+        }
+        
+        td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tbody tr:hover {
+            background: #f8f8f8;
+        }
+        
+        .highlight-col {
+            background: #FFF8F0;
+            font-weight: 600;
+            color: #D2691E;
+        }
+        
+        tbody tr:hover .highlight-col {
+            background: #FFF0E0;
+        }
+        
+        .better {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+        
+        .product-col-header {
+            text-align: center;
+        }
+        
+        .product-brand {
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .product-model {
+            font-size: 0.9em;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        /* Product Gallery */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .gallery-item {
+            background: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            padding: 15px;
+            background: white;
+        }
+        
+        /* Key Features Section */
+        .key-features {
+            padding: 60px 20px;
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .feature-item {
+            padding: 30px;
+            background: #fafafa;
+            border-radius: 12px;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        
+        .feature-text {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .footer p {
+            opacity: 0.7;
+            font-size: 0.9em;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 767px) {
+            .tagline {
+                font-size: 1em;
+            }
+            
+            .section-title {
+                font-size: 1.6em;
+            }
+            
+            .product-name {
+                font-size: 1.4em;
+            }
+            
+            .specs {
+                grid-template-columns: 1fr;
+            }
+            
+            th, td {
+                padding: 12px 10px;
+                font-size: 0.85em;
+            }
+            
+            .product-brand {
+                font-size: 0.95em;
+            }
+            
+            .product-model {
+                font-size: 0.8em;
+            }
+            
+            .hero-features {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .features-grid {
+                gap: 20px;
+            }
+            
+            .product-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="logo-container">
+            <img src="/mnt/user-data/uploads/gemilai_logo.jpeg" alt="Gemilai Logo">
+        </div>
+        <p class="tagline">Tworzenie Idealnego Espresso Od Pierwszego Dnia</p>
+        <div class="hero-features">
+            <div class="hero-feature">Darmowa wysyłka</div>
+            <div class="hero-feature">2 lata gwarancji</div>
+            <div class="hero-feature">Wsparcie 24/7</div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2 class="section-title">Nasz Flagowy Produkt</h2>
+        
+        <div class="product-grid">
+            <!-- Featured Espresso Machine -->
+            <div class="product-card featured">
+                <div class="product-image">
+                    <img src="https://www.gemilai.com/cdn/shop/files/owl-g3006-espresso-machine-394994.png?v=1770385487&width=1600" alt="Gemilai Owl G3006 Espresso Machine">
+                    <span class="badge">Flagship</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Gemilai Owl G3006</h3>
+                    <p class="product-description">
+                        Profesjonalny ekspres do espresso z zaawansowanym profilowaniem ciśnienia i stabilnością temperatury. 
+                        Zaprojektowany do przygotowywania espresso na poziomie baristy w domu, wyposażony w komponenty klasy komercyjnej.
+                    </p>
+                    <div class="specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Ciśnienie</span>
+                            <span class="spec-value">15 Bar</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Zbiornik wody</span>
+                            <span class="spec-value">1,7L</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Moc</span>
+                            <span class="spec-value">1500W</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Kontrola PID</span>
+                            <span class="spec-value">Precyzja ±0,5°C</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Portafilter</span>
+                            <span class="spec-value">58mm Profesjonalny</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Pre-infuzja</span>
+                            <span class="spec-value">Regulowana</span>
+                        </div>
+                    </div>
+                    <div class="price">
+                        <span class="price-label">Cena</span>
+                        1 799 zł
+                    </div>
+                    
+                    <div class="product-gallery">
+                        <div class="gallery-item">
+                            <img src="https://www.gemilai.com/cdn/shop/files/owl-g3006-espresso-machine-172435.jpg?v=1770385487&width=800" alt="Gemilai G3006 - widok z boku">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://www.gemilai.com/cdn/shop/files/owl-g3006-espresso-machine-449508.jpg?v=1770385487&width=800" alt="Gemilai G3006 - zbliżenie">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://www.gemilai.com/cdn/shop/files/owl-g3006-espresso-machine-814433.jpg?v=1770385487&width=800" alt="Gemilai G3006 - detale">
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <button class="cta-button">Dowiedz się więcej</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="key-features">
+        <h2 class="section-title">Kluczowe Funkcje G3006</h2>
+        
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Podwójne Wyświetlacze</h3>
+                <p class="feature-text">Monitoruj ciśnienie parzenia, temperaturę i czas w czasie rzeczywistym dzięki dwóm ekranom.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">💧</div>
+                <h3 class="feature-title">Regulowana Pre-infuzja</h3>
+                <p class="feature-text">Odblokuj bogate, wielowarstwowe aromaty z twoich ziaren. Dostosuj czas dla każdego poziomu prażenia.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">🌡️</div>
+                <h3 class="feature-title">Termicznie Zrównoważona Głowica</h3>
+                <p class="feature-text">Wbudowane grzałki PTC w głowicy grupy minimalizują utratę temperatury, zapewniając niezawodną ekstrakcję.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">☁️</div>
+                <h3 class="feature-title">2-Otworowa Dysza Parowa</h3>
+                <p class="feature-text">Pasuje do wszystkich kątów i technik spieniania mleka. Zrównoważone wyjście pary, łatwe do opanowania dla początkujących.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison">
+        <div class="comparison-container">
+            <h2 class="section-title">Porównaj Najlepsze</h2>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Funkcja</th>
+                            <th class="product-col-header">
+                                <span class="product-brand">Gemilai</span>
+                                <span class="product-model">Owl G3006</span>
+                            </th>
+                            <th class="product-col-header">
+                                <span class="product-brand">Breville</span>
+                                <span class="product-model">Barista Express</span>
+                            </th>
+                            <th class="product-col-header">
+                                <span class="product-brand">De'Longhi</span>
+                                <span class="product-model">Dedica EC685</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cena</strong></td>
+                            <td class="highlight-col better">1 799 zł</td>
+                            <td>2 999 zł</td>
+                            <td>1 599 zł</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ciśnienie</strong></td>
+                            <td class="highlight-col">15 Bar</td>
+                            <td>15 Bar</td>
+                            <td>15 Bar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pojemność zbiornika</strong></td>
+                            <td class="highlight-col better">1,7L</td>
+                            <td>2,0L</td>
+                            <td>1,0L</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kontrola temperatury PID</strong></td>
+                            <td class="highlight-col better">✓ ±0,5°C</td>
+                            <td>✓ Cyfrowa</td>
+                            <td>✗</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lanca parowa</strong></td>
+                            <td class="highlight-col">Profesjonalna 360°</td>
+                            <td>Obrotowa 360°</td>
+                            <td>Panarello</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pre-infuzja</strong></td>
+                            <td class="highlight-col better">✓ Regulowana</td>
+                            <td>✓ Stała</td>
+                            <td>✗</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Moc</strong></td>
+                            <td class="highlight-col">1500W</td>
+                            <td>1600W</td>
+                            <td>1300W</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rozmiar Portafilter</strong></td>
+                            <td class="highlight-col better">58mm Komercyjny</td>
+                            <td>54mm</td>
+                            <td>51mm</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Materiał konstrukcji</strong></td>
+                            <td class="highlight-col">Stal nierdzewna</td>
+                            <td>Stal nierdzewna</td>
+                            <td>Plastik/Metal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gwarancja</strong></td>
+                            <td class="highlight-col better">2 lata</td>
+                            <td>2 lata</td>
+                            <td>1 rok</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wyświetlacze</strong></td>
+                            <td class="highlight-col better">Podwójne ekrany</td>
+                            <td>Pojedynczy</td>
+                            <td>Brak</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Gemilai Coffee. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
