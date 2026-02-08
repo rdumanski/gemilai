@@ -211,6 +211,11 @@
             font-weight: 600;
         }
         
+        .spec-value.better {
+            color: #D2691E;
+            font-weight: 700;
+        }
+        
         .price {
             font-size: 2.2em;
             color: #D2691E;
@@ -365,6 +370,318 @@
             object-fit: contain;
             padding: 15px;
             background: white;
+        }
+        
+        /* Why Dual-Thermoblock Section */
+        .why-dual-thermoblock {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-intro {
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+            max-width: 800px;
+            margin: -30px auto 50px;
+            line-height: 1.8;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        @media (min-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .benefit-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .benefit-text {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Thermoblock Infographic */
+        .thermoblock-infographic {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .infographic-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .thermoblock-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (min-width: 768px) {
+            .thermoblock-diagram {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        
+        .thermoblock-unit {
+            flex: 1;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 2px solid #f0f0f0;
+            position: relative;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .brew-unit {
+            border-color: #D2691E;
+        }
+        
+        .steam-unit {
+            border-color: #4682B4;
+        }
+        
+        .thermoblock-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .thermoblock-icon {
+            font-size: 3em;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .thermoblock-header h3 {
+            font-size: 1.3em;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .thermoblock-body {
+            text-align: center;
+        }
+        
+        .temp-display {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #D2691E;
+            margin-bottom: 20px;
+        }
+        
+        .steam-unit .temp-display {
+            color: #4682B4;
+        }
+        
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .feature-list .feature-item {
+            background: white;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            color: #666;
+        }
+        
+        .water-flow {
+            margin-top: 20px;
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        .brew-flow {
+            color: #D2691E;
+        }
+        
+        .steam-flow {
+            color: #4682B4;
+        }
+        
+        .flow-arrow {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+        
+        .connection-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .connection-line {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+        }
+        
+        .parallel-text {
+            background: #D2691E;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        
+        .infographic-result {
+            background: linear-gradient(135deg, #D2691E 0%, #A0522D 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .result-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .infographic-result h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .infographic-result p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        /* Video Demo Section */
+        .video-demo {
+            padding: 80px 20px;
+            background: #fafafa;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            aspect-ratio: 16 / 9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+        }
+        
+        .play-button {
+            width: 100px;
+            height: 100px;
+            background: rgba(210, 105, 30, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .video-placeholder p {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .video-note {
+            font-size: 0.9em;
+            opacity: 0.7;
+            font-style: italic;
+        }
+        
+        .video-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .video-features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .video-feature {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #D2691E;
+            font-size: 0.95em;
+            color: #666;
+        }
+        
+        .video-feature strong {
+            display: block;
+            color: #D2691E;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
         
         /* Key Features Section */
@@ -592,12 +909,24 @@
                     <span class="badge">Flagship</span>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Gemilai Owl G3006</h3>
+                    <h3 class="product-name">Gemilai Owl G3006H</h3>
                     <p class="product-description">
-                        Profesjonalny ekspres do espresso z zaawansowanym profilowaniem ciśnienia i stabilnością temperatury. 
-                        Zaprojektowany do przygotowywania espresso na poziomie baristy w domu, wyposażony w komponenty klasy komercyjnej.
+                        Profesjonalny ekspres do espresso z innowacyjnym systemem dual-thermoblock i dual-pump. 
+                        Parz kawę i spień mleko jednocześnie dzięki dwóm niezależnym termoblokom o łącznej mocy 3000W.
                     </p>
                     <div class="specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Moc</span>
+                            <span class="spec-value better">3000W</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">System</span>
+                            <span class="spec-value better">Dual-Thermoblock</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Pompy</span>
+                            <span class="spec-value">Dual-Pump</span>
+                        </div>
                         <div class="spec-item">
                             <span class="spec-label">Ciśnienie</span>
                             <span class="spec-value">15 Bar</span>
@@ -607,20 +936,32 @@
                             <span class="spec-value">1,7L</span>
                         </div>
                         <div class="spec-item">
-                            <span class="spec-label">Moc</span>
-                            <span class="spec-value">1500W</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Kontrola PID</span>
-                            <span class="spec-value">Precyzja ±0,5°C</span>
+                            <span class="spec-label">Kontrola temp.</span>
+                            <span class="spec-value">2x PID</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">Portafilter</span>
                             <span class="spec-value">58mm Profesjonalny</span>
                         </div>
                         <div class="spec-item">
+                            <span class="spec-label">Thermal Balance</span>
+                            <span class="spec-value">Group Head</span>
+                        </div>
+                        <div class="spec-item">
                             <span class="spec-label">Pre-infuzja</span>
                             <span class="spec-value">Regulowana</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Dysza pary</span>
+                            <span class="spec-value">2-otworowa</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Wyświetlacz</span>
+                            <span class="spec-value">Touch Screen</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Manometr</span>
+                            <span class="spec-value">Coffee Pressure</span>
                         </div>
                     </div>
                     <div class="price">
@@ -647,6 +988,148 @@
             </div>
 
 
+        </div>
+    </section>
+
+    <!-- Why Dual-Thermoblock Section -->
+    <section class="why-dual-thermoblock">
+        <div class="container">
+            <h2 class="section-title">Dlaczego Dual-Thermoblock?</h2>
+            <p class="section-intro">
+                System dwóch niezależnych termobloków to rewolucja w domowych ekspresach do espresso. 
+                Poznaj korzyści tej innowacyjnej technologii.
+            </p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3 class="benefit-title">Jednoczesna Praca</h3>
+                    <p class="benefit-text">
+                        Parz kawę i spień mleko w tym samym czasie. Żadnego czekania między krokami - 
+                        przygotuj cappuccino lub latte w połowie czasu tradycyjnych ekspresów.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="benefit-title">Precyzyjna Kontrola</h3>
+                    <p class="benefit-text">
+                        Każdy thermoblock ma własną kontrolę temperatury PID. Idealna temperatura 
+                        ekstrakcji (90-96°C) i pary (130-140°C) - niezależnie, bez kompromisów.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3 class="benefit-title">Błyskawiczny Start</h3>
+                    <p class="benefit-text">
+                        3000W mocy oznacza gotowość do pracy w mniej niż 40 sekund. 
+                        Poranna kawa bez czekania - włącz i parz od razu.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💪</div>
+                    <h3 class="benefit-title">Potężna Para</h3>
+                    <p class="benefit-text">
+                        Dedykowany thermoblock pary generuje profesjonalną, suchą parę z 2-otworową 
+                        dyszą. Aksamitna mikropianka jak w kawiarni - za każdym razem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual-Thermoblock Infographic -->
+    <section class="thermoblock-infographic">
+        <div class="container">
+            <h2 class="section-title">Jak Działa Dual-Thermoblock?</h2>
+            
+            <div class="infographic-container">
+                <div class="thermoblock-diagram">
+                    <!-- Brew Thermoblock -->
+                    <div class="thermoblock-unit brew-unit">
+                        <div class="thermoblock-header">
+                            <span class="thermoblock-icon">☕</span>
+                            <h3>Thermoblock Parzenia</h3>
+                        </div>
+                        <div class="thermoblock-body">
+                            <div class="temp-display">90-96°C</div>
+                            <div class="feature-list">
+                                <div class="feature-item">✓ Kontrola PID</div>
+                                <div class="feature-item">✓ Thermal Balance</div>
+                                <div class="feature-item">✓ Pre-infuzja</div>
+                            </div>
+                        </div>
+                        <div class="water-flow brew-flow">
+                            <div class="flow-arrow">→</div>
+                            <span>Ekstrakcja</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Connection Line -->
+                    <div class="connection-line">
+                        <div class="parallel-text">Równoległa Praca</div>
+                    </div>
+                    
+                    <!-- Steam Thermoblock -->
+                    <div class="thermoblock-unit steam-unit">
+                        <div class="thermoblock-header">
+                            <span class="thermoblock-icon">💨</span>
+                            <h3>Thermoblock Pary</h3>
+                        </div>
+                        <div class="thermoblock-body">
+                            <div class="temp-display">130-140°C</div>
+                            <div class="feature-list">
+                                <div class="feature-item">✓ Kontrola PID</div>
+                                <div class="feature-item">✓ Sucha para</div>
+                                <div class="feature-item">✓ 2-otworowa dysza</div>
+                            </div>
+                        </div>
+                        <div class="water-flow steam-flow">
+                            <div class="flow-arrow">→</div>
+                            <span>Spienianie</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="infographic-result">
+                    <div class="result-icon">🏆</div>
+                    <h3>Rezultat</h3>
+                    <p>Pełne cappuccino w 60 sekund - od włączenia do pierwszego łyku!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section class="video-demo">
+        <div class="container">
+            <h2 class="section-title">Zobacz G3006H w Akcji</h2>
+            <p class="section-intro">
+                Obserwuj jak dual-thermoblock przyspiesza przygotowanie idealnego cappuccino
+            </p>
+            
+            <div class="video-container">
+                <!-- Placeholder for video -->
+                <div class="video-placeholder">
+                    <div class="play-button">▶</div>
+                    <p>Video wkrótce...</p>
+                    <span class="video-note">Trwa pozyskiwanie materiałów od producenta</span>
+                </div>
+            </div>
+            
+            <div class="video-features">
+                <div class="video-feature">
+                    <strong>0:00-0:40</strong> Szybki start - włączenie do gotowości
+                </div>
+                <div class="video-feature">
+                    <strong>0:40-1:20</strong> Jednoczesne parzenie i spienianie
+                </div>
+                <div class="video-feature">
+                    <strong>1:20-1:40</strong> Finalne cappuccino z latte art
+                </div>
+            </div>
         </div>
     </section>
 
