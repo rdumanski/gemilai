@@ -412,6 +412,92 @@
             line-height: 1.7;
         }
         
+        /* Contact Section */
+        .contact {
+            padding: 60px 20px;
+            background: white;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            background: #fafafa;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #f0f0f0;
+            margin-top: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #D2691E;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-button {
+            background: #D2691E;
+            color: white;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background: #A0522D;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.3);
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .contact-info a {
+            color: #D2691E;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
         /* Footer */
         .footer {
             background: #1a1a1a;
@@ -687,9 +773,69 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2 class="section-title">Skontaktuj się z nami</h2>
+        
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Imię i nazwisko *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Telefon</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Wiadomość *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Wyślij wiadomość</button>
+            </form>
+            
+            <div class="contact-info">
+                <p>Lub napisz bezpośrednio:</p>
+                <a href="mailto:radek@gemilai.pl">radek@gemilai.pl</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2024 Gemilai Coffee. Wszelkie prawa zastrzeżone.</p>
     </footer>
+
+    <script>
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Create email body
+            const subject = encodeURIComponent('Zapytanie ze strony Gemilai - ' + name);
+            const body = encodeURIComponent(
+                'Imię i nazwisko: ' + name + '\n' +
+                'Email: ' + email + '\n' +
+                'Telefon: ' + phone + '\n\n' +
+                'Wiadomość:\n' + message
+            );
+            
+            // Open email client
+            window.location.href = 'mailto:radek@gemilai.pl?subject=' + subject + '&body=' + body;
+        });
+    </script>
 </body>
 </html>
