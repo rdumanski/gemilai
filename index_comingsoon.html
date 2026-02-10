@@ -7,13 +7,13 @@
     <meta name="robots" content="noindex, nofollow">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            background-color: #050505; /* Bardzo ciemna czerń */
+            background-color: #050505; /* Czerń */
             color: #f0f0f0;
             font-family: 'Inter', sans-serif;
             height: 100vh;
@@ -26,7 +26,7 @@
             overflow: hidden;
         }
 
-        /* Subtelne tło - spotlight */
+        /* Subtelne tło */
         body::before {
             content: '';
             position: absolute;
@@ -37,39 +37,43 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 800px;
+            width: 100%;
             animation: fadeIn 1.5s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+        /* --- STYL DLA LOGO WEBP --- */
+        .brand-logo {
+            max-width: 450px; /* Szersze, bo logo jest poziome */
+            width: 85%;       /* Na mobilkach zajmie 85% ekranu */
+            height: auto;     
+            margin-bottom: 25px;
         }
-
-        .brand-gold {
-            color: #C5A059; /* Kolor kawowej cremy / złota */
-        }
+        /* -------------------------- */
 
         p.subtitle {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             color: #888;
             margin-bottom: 40px;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-weight: 600;
         }
 
         .status {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 30px;
             font-weight: 300;
+            line-height: 1.6;
+            color: #ccc;
         }
 
-        /* Elegancka linia ładowania */
+        /* Linia w kolorze pomarańczowym Gemilai (#e65100 lub zbliżony) */
         .loader-line {
-            width: 100px;
+            width: 80px;
             height: 2px;
             background: #222;
             margin: 0 auto 40px;
@@ -83,7 +87,7 @@
             left: -50%;
             height: 100%;
             width: 50%;
-            background: #C5A059;
+            background: #FF5500; /* Gemilai Orange */
             animation: loading 2s infinite ease-in-out;
         }
 
@@ -91,15 +95,18 @@
             color: #fff;
             text-decoration: none;
             border: 1px solid #333;
-            padding: 12px 25px;
-            font-size: 0.9rem;
+            padding: 12px 30px;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
             display: inline-block;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .contact-btn:hover {
-            border-color: #C5A059;
-            color: #C5A059;
+            border-color: #FF5500;
+            color: #FF5500;
         }
 
         /* Animacje */
@@ -112,24 +119,20 @@
             0% { left: -50%; }
             100% { left: 100%; }
         }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>GEMILAI <span class="brand-gold">POLSKA</span></h1>
+        <img src="800_160-logo.webp" alt="Gemilai Polska" class="brand-logo">
+        
         <p class="subtitle">Oficjalny Dystrybutor</p>
 
         <div class="loader-line"></div>
 
         <p class="status">Przygotowujemy coś wyjątkowego.<br>Premiera systemu G3006H: <strong>Wiosna 2026</strong>.</p>
 
-        <a href="mailto:radek@gemilai.pl" class="contact-btn">Kontakt dla Partnerów</a>
+        <a href="mailto:radek@gemilai.pl" class="contact-btn">Strefa Partnera</a>
     </div>
 
 </body>
