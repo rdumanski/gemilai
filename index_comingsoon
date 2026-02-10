@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemilai Polska | Oficjalny Dystrybutor</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: #050505; /* Bardzo ciemna czerń */
+            color: #f0f0f0;
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Subtelne tło - spotlight */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #050505 70%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 600px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .brand-gold {
+            color: #C5A059; /* Kolor kawowej cremy / złota */
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .status {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Elegancka linia ładowania */
+        .loader-line {
+            width: 100px;
+            height: 2px;
+            background: #222;
+            margin: 0 auto 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loader-line::after {
+            content: '';
+            position: absolute;
+            left: -50%;
+            height: 100%;
+            width: 50%;
+            background: #C5A059;
+            animation: loading 2s infinite ease-in-out;
+        }
+
+        .contact-btn {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #333;
+            padding: 12px 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-btn:hover {
+            border-color: #C5A059;
+            color: #C5A059;
+        }
+
+        /* Animacje */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes loading {
+            0% { left: -50%; }
+            100% { left: 100%; }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>GEMILAI <span class="brand-gold">POLSKA</span></h1>
+        <p class="subtitle">Oficjalny Dystrybutor</p>
+
+        <div class="loader-line"></div>
+
+        <p class="status">Przygotowujemy coś wyjątkowego.<br>Premiera systemu G3006H: <strong>Wiosna 2026</strong>.</p>
+
+        <a href="mailto:radek@gemilai.pl" class="contact-btn">Kontakt dla Partnerów</a>
+    </div>
+
+</body>
+</html>
